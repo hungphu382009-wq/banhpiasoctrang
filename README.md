@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bánh Pía - Đặc Sản Sóc Trăng</title>
     <style>
-        /* Rest CSS cơ bản */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -41,10 +40,12 @@
             color: #fde8cd;
         }
 
-        /* Thanh điều hướng */
         nav {
             background-color: #5c0e0e;
             padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav ul {
@@ -93,6 +94,11 @@
             border-bottom: 2px solid #8b1515;
             padding-bottom: 5px;
             margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
         }
 
         .post-content p {
@@ -100,27 +106,47 @@
             text-align: justify;
         }
 
-        .image-box {
-            text-align: center;
+        .post-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .post-content li {
+            margin-bottom: 6px;
+        }
+
+        /* KHU VỰC HÌNH ẢNH BÁNH PÍA */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
             margin: 20px 0;
         }
 
-        .image-box img {
-            max-width: 100%;
-            height: auto;
+        .image-card {
+            background-color: #fff8f0;
+            border: 1px solid #ffe3c6;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
         }
 
-        .image-box span {
+        .image-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
             display: block;
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
-            margin-top: 6px;
         }
 
-        /* CỘT BÊN (SIDEBAR - TÁC GIẢ & ĐĂNG NHẬP) */
+        .image-card .caption {
+            padding: 10px 15px;
+            font-size: 0.95rem;
+            color: #555;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* CỘT BÊN (SIDEBAR) */
         aside {
             display: flex;
             flex-direction: column;
@@ -134,7 +160,6 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        /* Tác giả */
         .authors-list {
             list-style: none;
         }
@@ -159,7 +184,6 @@
             font-weight: bold;
         }
 
-        /* Đăng nhập */
         .login-form {
             display: flex;
             flex-direction: column;
@@ -188,7 +212,7 @@
             background-color: #a82020;
         }
 
-        /* PHẦN CHÂN TRANG (FOOTER) */
+        /* CHÂN TRANG */
         footer {
             background-color: #222;
             color: #fff;
@@ -200,7 +224,6 @@
             letter-spacing: 1px;
         }
 
-        /* RESPONSIVE CHO MÀN HÌNH NHỎ */
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
@@ -213,7 +236,7 @@
     <!-- PHẦN ĐẦU (Header & Thanh điều hướng) -->
     <header id="trang-chu">
         <h1>BÁNH PÍA SÓC TRĂNG</h1>
-        <p class="intro">Bánh Pía là một trong những đặc sản vô cùng nổi tiếng của Sóc Trăng, mang hương vị ngọt ngào, thơm béo quyến rũ từ sầu riêng, đậu xanh và lòng đỏ trứng muối.</p>
+        <p class="intro">Bánh Pía là thức quà đặc sản nổi tiếng của vùng đất Sóc Trăng, mang nét văn hóa ẩm thực độc đáo kết hợp giữa người Hoa và người Nam Bộ.</p>
     </header>
 
     <nav>
@@ -226,33 +249,48 @@
         </ul>
     </nav>
 
-    <!-- PHẦN THÂN (Nội dung chính + Cột bên) -->
+    <!-- PHẦN THÂN -->
     <div class="container">
         
-        <!-- Bài viết nội dung & Hình ảnh -->
         <main>
-            <section id="gioi-thieu">
-                <h2 class="section-title">Giới Thiệu Về Bánh Pía</h2>
-                <div class="post-content">
-                    <p>Bánh Pía là thức quà đặc sản nổi tiếng của vùng đất Sóc Trăng. Bánh có nguồn gốc từ người Hoa di cư sang miền Tây Nam Bộ từ thế kỷ XVII, trải qua thời gian đã được biến tấu phù hợp với khẩu vị của người Việt.</p>
-                    <p>Điểm đặc trưng nhất của Bánh Pía chính là lớp vỏ bánh xốp, mềm được xếp từ vô số lớp bột mỏng ngàn lớp. Nhân bánh truyền thống là sự kết hợp tinh tế giữa đậu xanh nhuyễn, sầu riêng thơm nức và lòng đỏ trứng muối bùi béo.</p>
-                </div>
+            <!-- NỘI DUNG GIỚI THIỆU -->
+            <section id="gioi-thieu" class="post-content">
+                <h2 class="section-title">Nguồn Gốc & Ý Nghĩa</h2>
+                <p>Từ "Pía" có nguồn gốc từ tiếng Triều Châu "Pi-é", nghĩa là bánh mỳ tròn hay bánh nướng. Bánh do người Triều Châu mang theo khi di cư đến vùng sông nước Sóc Trăng vào thế kỷ 17. Qua thời gian, người dân địa phương đã sáng tạo thêm nhân sầu riêng, đậu xanh và trứng muối để tạo nên hương vị đặc trưng như ngày nay.</p>
+
+                <h2 class="section-title">Đặc Điểm Của Bánh Pía</h2>
+                <ul>
+                    <li><strong>Vỏ bánh:</strong> Độc đáo với hàng chục lớp vỏ mỏng xếp chồng lên nhau như từng trang sách, mềm dẻo và không bị khô.</li>
+                    <li><strong>Nhân bánh:</strong> Được nhào nặn từ đậu xanh hấp chín xay mịn, mỡ lợn xắt hạt lựu, hòa quyện cùng cơm sầu riêng tươi đậm đà.</li>
+                    <li><strong>Lòng đỏ trứng muối:</strong> Nằm ở chính giữa chiếc bánh, mang vị mặn bùi giúp cân bằng độ ngọt béo của sầu riêng và đậu xanh.</li>
+                </ul>
+
+                <h2 class="section-title">Thưởng Thức Bánh Pía Đúng Cách</h2>
+                <p>Bánh Pía ngon nhất là khi thưởng thức cùng một tách trà nóng (như trà xanh hoặc trà ổi). Vị chát nhẹ, ấm áp của trà sẽ làm dịu đi độ ngọt và béo ngậy của bánh, tôn lên hương thơm sầu riêng đọng lại nơi đầu lưỡi.</p>
             </section>
 
+            <!-- HÌNH ẢNH BÁNH PÍA CHUẨN -->
             <section id="hinh-anh">
-                <h2 class="section-title">Hình Ảnh Sản Phẩm</h2>
-                <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Bánh Pía Sóc Trăng">
-                    <span>Bánh Pía Sóc Trăng hương vị thơm ngon đậm đà</span>
+                <h2 class="section-title">Hình Ảnh Bánh Pía Chuẩn</h2>
+                <div class="image-gallery">
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Bánh Pía nướng vàng óng">
+                        <div class="caption">Hình 1: Chiếc Bánh Pía tròn đầy với vỏ nướng màu vàng cam đẹp mắt</div>
+                    </div>
+                    
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1621236378699-8597faf6a176?auto=format&fit=crop&w=1000&q=80" alt="Chi tiết nhân bánh pía sầu riêng trứng muối">
+                        <div class="caption">Hình 2: Cắt đôi chiếc bánh thấy rõ lớp vỏ ngàn lớp cùng nhân trứng muối bùi béo bên trong</div>
+                    </div>
                 </div>
             </section>
         </main>
 
-        <!-- Cột bên: Tác giả & Đăng nhập -->
+        <!-- CỘT BÊN (TÁC GIẢ & ĐĂNG NHẬP) -->
         <aside>
             <!-- Phần Tác giả -->
             <div class="card" id="tac-gia">
-                <h3 class="section-title" style="font-size: 1.2rem;">Tác Giả Thực Hiện</h3>
+                <h3 class="section-title" style="font-size: 1.2rem; margin-top: 0;">Tác Giả Thực Hiện</h3>
                 <ul class="authors-list">
                     <li><strong>Hưng Phú</strong> <span class="leader-badge">Trưởng nhóm</span></li>
                     <li>Thảo Vy</li>
@@ -266,7 +304,7 @@
 
             <!-- Phần Đăng nhập -->
             <div class="card" id="dang-nhap">
-                <h3 class="section-title" style="font-size: 1.2rem;">Đăng Nhập</h3>
+                <h3 class="section-title" style="font-size: 1.2rem; margin-top: 0;">Đăng Nhập</h3>
                 <form class="login-form" action="#" method="post" onsubmit="return false;">
                     <input type="text" placeholder="Tên đăng nhập" required>
                     <input type="password" placeholder="Mật khẩu" required>
@@ -277,9 +315,9 @@
 
     </div>
 
-    <!-- PHẦN CHÂN TRANG (Y hệt dòng cuối trên bảng) -->
+    <!-- PHẦN CHÂN TRANG -->
     <footer>
-        DS -> Lớp 12A4 -> THPT THAT TD
+        DS -> Lớp 12A2 -> THPT HOANG DIEU
     </footer>
 
 </body>
