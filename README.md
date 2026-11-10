@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -115,7 +116,7 @@
             margin-bottom: 6px;
         }
 
-        /* KHU VỰC HÌNH ẢNH BÁNH PÍA */
+        /* KHU VỰC HÌNH ẢNH BÁNH PÍA THỰC TẾ */
         .image-gallery {
             display: grid;
             grid-template-columns: 1fr;
@@ -133,7 +134,7 @@
 
         .image-card img {
             width: 100%;
-            height: 280px;
+            max-height: 400px;
             object-fit: cover;
             display: block;
         }
@@ -266,21 +267,23 @@
                 </ul>
 
                 <h2 class="section-title">Thưởng Thức Bánh Pía Đúng Cách</h2>
-                <p>Bánh Pía ngon nhất là khi thưởng thức cùng một tách trà nóng (như trà xanh hoặc trà ổi). Vị chát nhẹ, ấm áp của trà sẽ làm dịu đi độ ngọt và béo ngậy của bánh, tôn lên hương thơm sầu riêng đọng lại nơi đầu lưỡi.</p>
+                <p>Bánh Pía ngon nhất là khi thưởng thức cùng một tách trà nóng. Vị chát nhẹ của trà giúp cân bằng độ ngọt béo và tôn lên hương thơm đậm đà của sầu riêng.</p>
             </section>
 
-            <!-- HÌNH ẢNH BÁNH PÍA CHUẨN -->
+            <!-- HÌNH ẢNH BÁNH PÍA ĐÃ ĐƯỢC CẬP NHẬT -->
             <section id="hinh-anh">
-                <h2 class="section-title">Hình Ảnh Bánh Pía Chuẩn</h2>
+                <h2 class="section-title">Hình Ảnh Bánh Pía Đặc Sản</h2>
                 <div class="image-gallery">
+                    <!-- Ảnh 1 -->
                     <div class="image-card">
-                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Bánh Pía nướng vàng óng">
-                        <div class="caption">Hình 1: Chiếc Bánh Pía tròn đầy với vỏ nướng màu vàng cam đẹp mắt</div>
+                        <img src="banh-pia-1.jpg" alt="Bánh Pía đậu xanh sầu riêng trứng muối">
+                        <div class="caption">Hình 1: Bánh Pía đậu xanh sầu riêng trứng muối vàng bùi ngậy[cite: 2]</div>
                     </div>
                     
+                    <!-- Ảnh 2 -->
                     <div class="image-card">
-                        <img src="https://images.unsplash.com/photo-1621236378699-8597faf6a176?auto=format&fit=crop&w=1000&q=80" alt="Chi tiết nhân bánh pía sầu riêng trứng muối">
-                        <div class="caption">Hình 2: Cắt đôi chiếc bánh thấy rõ lớp vỏ ngàn lớp cùng nhân trứng muối bùi béo bên trong</div>
+                        <img src="banh-pia-2.jpg" alt="Bánh Pía truyền thống trên thớt gỗ">
+                        <div class="caption">Hình 2: Bánh Pía vỏ mềm mịn xếp lớp mỏng mang hương vị truyền thống[cite: 3]</div>
                     </div>
                 </div>
             </section>
